@@ -1,0 +1,6 @@
+<% @teams.each do |team| %>
+	<div class="team_wrapper">
+		<h2 class="name"><%= link_to team.name, team %></h2>
+		<p class="sport">Sport: <%= team.sport %></p>
+	</div>
+<% end %>
