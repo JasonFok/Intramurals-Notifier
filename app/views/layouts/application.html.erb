@@ -1,14 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>IntramuralsNotifierApp</title>
+  <title>Intramurals Notifier</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', 'http://fonts.googleapi.com/css?family=Relaway:400,700' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+   <%= favicon_link_tag 'basketball.ico' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<div id="sidebar">
+		<div id="logo">
+			<%= link_to root_path do %>
+				<%= image_tag "Basketball_pictogram.svg.png" %>
+			<% end %>
+		</div>
 
-<%= yield %>
+		<ul>
+			<li class="category">Website</li>
+			<li><%= link_to "Home", root_path %></li>
+			<li>About</li>
+		</ul>
 
+		<ul>
+			<li class="category">Contact</li>
+			<li><a href="https://github.com/jasonfok">Github</a></li>
+			<li><a href="mailto:jyffok@uwaterloo.ca">Email</a></li>
+		</ul>
+
+		<p class="sign_in">Admin Login</p>
+	</div>
+
+	<div id="main_content">
+		<% flash.each do |name, msg| %>
+		<%= content_tag(:div, msg, class: "alert") %>
+		<% end %>
+
+	<%= yield %>
+	</div>
 </body>
 </html>

@@ -1,7 +1,18 @@
-<h1 class="name">
-	<%= @team.name %>
-</h1>
+<div id="main_content">
+		<div id="header">	
+			<div class="buttons">
+			<button class="button">New Game</button>
+			<button class="button">New Team Member</button>
+		</div>
+	</div>
+</div>
 
-<p class="sport">
-	Sport: <%= @team.sport %>
-</p>
+<div id="team_content">
+	<h1 class="name">
+		<%= @team.name %>
+	</h1>
+
+	<p class="sport">
+		Sport: <%= @team.sport %>
+	</p>
+</div>
