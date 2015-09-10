@@ -4,13 +4,17 @@ class TeamsController < ApplicationController
 	end
 
 	def new
+		@team = Team.new
 	end
 
 	def create 
 		@team = Team.new(team_params)
-		@team.save
-
-		redirect_to @team
+		
+		if @team.save
+			redirect_to @team
+		else
+			render 'new'
+		end
 	end
 
 	def show
