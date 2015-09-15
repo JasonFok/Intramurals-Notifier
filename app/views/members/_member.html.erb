@@ -1,0 +1,13 @@
+<div class="member clearfix">
+	<div class="member_content">
+		<p class="member_name"><strong><%= member.name %></strong></p>
+		<p class="member_email"><%= member.email %></p>
+		</p>
+	</div>
+
+	<p><%= link_to 'Delete', [member.team, member],
+									method: :Delete,
+									class: "button",
+									data: { confirm: 'Are you sure?'} %>
+	</p>
+</div>

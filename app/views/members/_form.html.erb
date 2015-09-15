@@ -1,0 +1,17 @@
+<%= form_for([@team, @team.members.build]) do |f| %>
+	<p>
+		<%= f.label :name %><br>
+		<%= f.text_field :name %>
+	</p>
+
+	<p>
+		<%= f.label :email %><br>
+		<%= f.text_field :email %>
+	</p>
+
+	<br>
+
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>

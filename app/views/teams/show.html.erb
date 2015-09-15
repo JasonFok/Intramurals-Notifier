@@ -1,10 +1,10 @@
 <div id="main_content">
 		<div id="header">	
 			<div class="buttons">
-			<button class="button">New Game</button>
-			<button class="button">New Team Member</button>
+				<button class="button">New Game</button>
+				<button class="button">New Team Member</button>
+			</div>
 		</div>
-	</div>
 </div>
 
 <div id="team_content">
@@ -13,8 +13,16 @@
 	</h1>
 
 	<p class="sport">
-		Sport: <%= @team.sport %>
+		<%= @team.sport %>
 		<%= link_to '| Edit', edit_team_path(@team) %>
 		<%= link_to '| Delete', team_path(@team), method: :delete, data: { confirm: 'Are you sure?'} %>
 	</p>
+
+	<div id="members">
+		<h2><%= pluralize(@team.members.count, "Member") %></h2>
+		<%= render @team.members %>
+
+		<h3>Add a member:</h3>
+		<%= render "members/form" %>
+	</div>
 </div>
