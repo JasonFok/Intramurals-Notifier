@@ -14,9 +14,19 @@
 
 	<p class="sport">
 		<%= @team.sport %>
-		<%= link_to '| Edit', edit_team_path(@team) %>
-		<%= link_to '| Delete', team_path(@team), method: :delete, data: { confirm: 'Are you sure?'} %>
+			<% if user_signed_in? %>
+			| <%= link_to 'Edit', edit_team_path(@team) %>
+			| <%= link_to 'Delete', team_path(@team), method: :delete, data: { confirm: 'Are you sure?'} %>
+		<% end %>
 	</p>
+
+	<div id="games">
+		<h2><%= pluralize(@team.games.count, "Game") %></h2>
+		<%= render @team.games %>
+
+		<h3>Add a game:</h3>
+		<%= render "games/form" %>
+	</div>
 
 	<div id="members">
 		<h2><%= pluralize(@team.members.count, "Member") %></h2>

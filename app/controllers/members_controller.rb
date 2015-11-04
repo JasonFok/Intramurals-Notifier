@@ -4,6 +4,9 @@ class MembersController < ApplicationController
 		@team = Team.find(params[:team_id])
 		@member = @team.members.create(params[:member].permit(:name, :email))
 		
+		# Sends email to user when user is created.
+     NotifierMailer.notifier_email(@member).deliver
+
 		redirect_to team_path(@team)
 	end
 

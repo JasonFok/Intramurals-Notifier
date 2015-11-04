@@ -1,12 +1,11 @@
 <div class="member clearfix">
 	<div class="member_content">
-		<p class="member_name"><strong><%= member.name %></strong></p>
-		<p class="member_email"><%= member.email %></p>
-		</p>
+		<p class="member_email"><%= game.date_time %></p>
+		<p class="member_email"><%= game.location %></p>
 	</div>
 
 	<% if user_signed_in? %>
-	<p><%= link_to 'Delete', [member.team, member],
+	<p><%= link_to 'Delete', [game.team, game],
 									method: :Delete,
 									class: "button",
 									data: { confirm: 'Are you sure?'} %>

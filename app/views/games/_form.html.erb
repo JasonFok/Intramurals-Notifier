@@ -1,0 +1,17 @@
+<%= form_for([@team, @team.games.build]) do |f| %>
+	<p>
+		<%= f.label :date_time %><br>
+		<%= f.text_field :date_time %>
+	</p>
+
+	<p>
+		<%= f.label :location %><br>
+		<%= f.text_field :location %>
+	</p>
+
+	<br>
+
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>

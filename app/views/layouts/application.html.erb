@@ -19,7 +19,6 @@
 		<ul>
 			<li class="category">Website</li>
 			<li><%= link_to "Home", root_path %></li>
-			<li>About</li>
 		</ul>
 
 		<ul>
@@ -28,7 +27,9 @@
 			<li><a href="mailto:jyffok@uwaterloo.ca">Email</a></li>
 		</ul>
 
-		<p class="sign_in">Admin Login</p>
+			<% if !user_signed_in? %>
+				<p class="sign_in"><%= link_to "Admin Login", new_user_session_path %></p>
+			<% end %>
 	</div>
 
 	<div id="main_content">
